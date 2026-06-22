@@ -1,7 +1,7 @@
-from fastapi import FastAPI,Depends
-from fastapi.fast_api_backend.models import Product
-from fastapi.fast_api_backend.database import session,engine
-import fastapi.fast_api_backend.database_models as database_models
+from fastapi import FastAPI, Depends
+from models import Product
+from  database import session, engine
+import database_models
 from sqlalchemy.orm import Session
 
 app = FastAPI()
@@ -42,7 +42,7 @@ def get_db():
 def init_db():
     #Intialize the database
     db = session()
-    count = db.query(database_models.Product).count
+    count = db.query(database_models.Product).count()
     if count == 0:
         for product in products:
             db.add(database_models.Product(**product.model_dump()))

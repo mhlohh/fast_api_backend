@@ -1,0 +1,17 @@
+# Local environment folder
+fastapi/
+
+# Generic virtual environments (just in case)
+.venv/
+venv/
+env/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
