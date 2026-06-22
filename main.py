@@ -8,6 +8,7 @@ app = FastAPI()
 
 database_models.Base.metadata.create_all(bind = engine)
 
+
 #get http request used for respond based on get("/") / is the request api
 @app.get("/")
 def greet():
